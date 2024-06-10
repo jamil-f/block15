@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froyo Flavor Counter</title>
+</head>
+<body>
+    <h1>The Froyo Shop</h1>
+    <script>
+        function countFlavors(flavorsArray) {
+            const flavorCounts = {};
+            for (let flavor of flavorsArray) {
+                if (flavorCounts[flavor]) {
+                    flavorCounts[flavor]++;
+                } else {
+                    flavorCounts[flavor] = 1;
+                }
+            }
+            return flavorCounts;
+        }
+        const userInput = prompt("Please enter a list of comma-separated froyo flavors:");
+        
+        if (userInput) {
+            const flavorsArray = userInput.split(',');
+            const flavorCounts = countFlavors(flavorsArray);
+            console.table(flavorCounts);
+        } else {
+            console.log("No information given.");
+        }
+    </script>
+</body>
+</html>
